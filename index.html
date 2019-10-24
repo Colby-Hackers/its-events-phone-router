@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Eliminates the need for a mobile work phone for the ITS Events Team at Colby College.">
+  <meta name="author" content="Colby Hackers">
+
+  <title>ITS Events Phone Router</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Custom CSS Options -->
+  <link href="main.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <div class="container-fluid">
+  <div class="row no-gutter">
+    <div class="d-none d-md-flex col-md-4 col-lg-6 bg-image"></div>
+    <div class="col-md-8 col-lg-6">
+      <div class="login d-flex align-items-center py-5">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-9 col-lg-8 mx-auto">
+              <h3 class="login-heading mb-4">Welcome back to the office!</h3>
+              <form>
+                <div class="form-label-group">
+                  <input type="tel" id="phoneNumber" class="form-control" placeholder="Phone Number" required autofocus>
+                  <label for="phoneNumber">Phone Number</label>
+                </div>
+                
+                <div class="slidecontainer">
+                    Shift Length
+                <input type="range" min="1.0" max="6.0" value="1" class="slider" id="shiftLength">
+                    <div class="text-uppercase font-weight-bold mb-2"><span id="showShiftLength"></span> HOURS</div>
+                </div>
+                
+                <button class="btn btn-lg btn-primary btn-block btn-login text-uppercase font-weight-bold mb-2" type="submit">ACTIVATE WORK PHONE</button>
+                <div class="text-center">
+                  <a class="small" href="#">Having trouble?</a></div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+</body>
+<script>
+    var slider = document.getElementById("shiftLength");
+    var output = document.getElementById("showShiftLength");
+    output.innerHTML = slider.value; // Display the default slider value
+
+    // Update the current slider value (each time you drag the slider handle)
+    slider.oninput = function() {
+      output.innerHTML = this.value;
+}    
+</script>
+</html>
